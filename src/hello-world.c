@@ -48,7 +48,7 @@ static GParamSpec *gParamSpecs [LAST_PROP];
  *
  * Allocates a new #HelloWorld.
  *
- * Returns: a #HelloWorld.
+ * Returns: (transfer full): a #HelloWorld.
  */
 HelloWorld *
 hello_world_new (const gchar *msg)
