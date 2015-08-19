@@ -128,8 +128,8 @@ hello_world_class_init (HelloWorldClass *klass)
                          (G_PARAM_READWRITE |
                           G_PARAM_CONSTRUCT_ONLY |
                           G_PARAM_STATIC_STRINGS));
-  g_object_class_install_property (object_class, PROP_MESSAGE,
-                                   gParamSpecs [PROP_MESSAGE]);
+
+  g_object_class_install_properties (object_class, LAST_PROP, gParamSpecs);
 }
 
 static void
