@@ -65,7 +65,7 @@ hello_world_finalize (GObject *object)
 {
   HelloWorld *self = (HelloWorld *)object;
 
-  g_free (self->msg);
+  g_clear_pointer (&self->msg, g_free);
 
   G_OBJECT_CLASS (hello_world_parent_class)->finalize (object);
 }
