@@ -53,6 +53,8 @@ static GParamSpec *gParamSpecs [LAST_PROP];
 HelloWorld *
 hello_world_new (const gchar *msg)
 {
+  g_return_val_if_fail (msg != NULL, NULL);
+
   return g_object_new (HELLO_TYPE_WORLD,
                        "message", msg,
                        NULL);
@@ -146,5 +148,7 @@ hello_world_init (HelloWorld *self)
 void
 hello_world_print_message (HelloWorld *self)
 {
+  g_return_if_fail (HELLO_IS_WORLD (self));
+
   g_print ("Message: %s\n", self->msg);
 }
