@@ -18,6 +18,13 @@
 
 #include "hello-world.h"
 
+/**
+ * SECTION: hello-world
+ * @short_description: hello world
+ *
+ * #HelloWorld rappresents Hello, World! example.
+ */
+
 struct _HelloWorld
 {
   GObject parent_instance;
@@ -35,6 +42,14 @@ enum {
 
 static GParamSpec *gParamSpecs [LAST_PROP];
 
+/**
+ * hello_world_new:
+ * @msg: Message which will used.
+ *
+ * Allocates a new #HelloWorld.
+ *
+ * Returns: a #HelloWorld.
+ */
 HelloWorld *
 hello_world_new (const gchar *msg)
 {
@@ -98,6 +113,11 @@ hello_world_class_init (HelloWorldClass *klass)
   object_class->get_property = hello_world_get_property;
   object_class->set_property = hello_world_set_property;
 
+  /**
+   * HelloWorld:message:
+   *
+   * The message which will print.
+   */
   gParamSpecs [PROP_MESSAGE] =
     g_param_spec_string ("message",
                          "Message",
@@ -115,6 +135,14 @@ hello_world_init (HelloWorld *self)
 {
 }
 
+/**
+ * hello_world_print_message:
+ * @self: a #HelloWorld
+ *
+ * Prints message which set in object
+ *
+ * Returns: Nothing.
+ */
 void
 hello_world_print_message (HelloWorld *self)
 {
