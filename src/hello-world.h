@@ -16,8 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef HELLO_WORLD_H
-#define HELLO_WORLD_H
+#pragma once
 
 #include <glib-object.h>
 
@@ -31,5 +30,3 @@ HelloWorld *hello_world_new    (const gchar *msg);
 void hello_world_print_message (HelloWorld  *self);
 
 G_END_DECLS
-
-#endif /* HELLO_WORLD_H */
